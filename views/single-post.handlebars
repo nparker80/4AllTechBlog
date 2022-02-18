@@ -1,0 +1,21 @@
+<div class="card single-post-padding">
+  <h1 id="post-title" class="post-header">{{post.title}}</h1>
+  <h4>Posted by {{post.user.username}} on 2/18/22</h4>
+  <div class="container">
+    <p id="post-body" class="post-text post-text-padding">{{post.body}}</p>
+  </div>
+  {{#if currentUser}}
+  <button id="edit-btn">Edit</button>
+  <button id="edit-btn">Delete</button>
+  {{/if}}
+</div>
+
+{{#each post.comments as |aComment|}}
+{{>comment aComment{{/each}}
+{{/each}}
+
+<link rel="stylesheet" href="/css/single-post.css">
+<script src="/js/single-post.js"></script>
+{{#if currentUser}}
+<script src="/js/edit-delete-post.js"></script>
+{{/if}}
