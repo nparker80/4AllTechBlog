@@ -4,7 +4,7 @@
 # 4All Tech Blog
 <div>
    <p>
-    View application functionality.<a href="https://drive.google.com/file/d/1PO7IP4yyhgUADwFYL9OrVbwM0ZUj7TeF/view"> Walkthrough Video</a><br>
+    View application functionality.<a href="https://for-all-tech-blog-nparker.herokuapp.com/"> Deployed App</a><br>
       
   </p>
 </div>
