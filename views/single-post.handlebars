@@ -1,21 +1,23 @@
-<div class="card single-post-padding">
-  <h1 id="post-title" class="post-header">{{post.title}}</h1>
-  <h4>Posted by {{post.user.username}} on 2/18/22</h4>
-  <div class="container">
-    <p id="post-body" class="post-text post-text-padding">{{post.body}}</p>
+<a href="/dashboard" class="go-back"> &larr; Back to dashboard</a>
+<br>
+<br>
+
+{{> post-info post}}
+
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
   </div>
-  {{#if currentUser}}
-  <button id="edit-btn">Edit</button>
-  <button id="edit-btn">Delete</button>
-  {{/if}}
-</div>
 
-{{#each post.comments as |aComment|}}
-{{>comment aComment{{/each}}
-{{/each}}
+  <div>
+    <button type="submit">add comment</button>
+  </div>
+</form>
+{{/if}}
 
-<link rel="stylesheet" href="/css/single-post.css">
-<script src="/js/single-post.js"></script>
-{{#if currentUser}}
-<script src="/js/edit-delete-post.js"></script>
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
 {{/if}}
